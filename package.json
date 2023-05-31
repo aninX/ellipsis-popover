@@ -5,10 +5,12 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "build": "cross-env NODE_ENV=production webpack"
+    "build": "cross-env NODE_ENV=production webpack",
+    "buildes": "vite build"
   },
   "repository": {
     "type": "git",
@@ -51,9 +53,12 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.1",
+    "rollup-plugin-node-externals": "^6.0.1",
     "style-loader": "^3.3.2",
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.4",
+    "vite": "^4.3.9",
+    "vite-plugin-dts": "^2.3.0",
     "webpack": "^5.82.1",
     "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.15.0",

@@ -1,5 +1,5 @@
 /**
- * @file Ellipsis Popover
+ * @file Ellipsis Popover 
  * @author anin
  * @lastEditors
  */
@@ -10,9 +10,8 @@ import {Popover} from 'antd';
 import 'antd/es/popover/style/css'
 export interface EllipsisPopoverProp extends PopoverProps {
     text: string | React.ReactNode;
-    tag?: React.ReactNode;
 }
-const EllipsisPopover: FC<EllipsisPopoverProp> = ({text, tag, ...rest}) => {
+const EllipsisPopover: FC<EllipsisPopoverProp> = ({text, ...rest}) => {
     const [Visible, setVisible] = useState<boolean>(false);
     const eleRef = useRef<HTMLDivElement>(null);
     const setVisibleHandle = useCallback(() => {
@@ -40,7 +39,6 @@ const EllipsisPopover: FC<EllipsisPopoverProp> = ({text, tag, ...rest}) => {
                 whiteSpace: 'nowrap'
             }}
         >
-            {tag}
             {text || '-'}
         </div>
     );
@@ -51,7 +49,6 @@ const EllipsisPopover: FC<EllipsisPopoverProp> = ({text, tag, ...rest}) => {
                 <Popover
                     content={text}
                     {...rest}
-                    // trigger={['click', 'hover']}
                 >
                     {content}
                 </Popover>
